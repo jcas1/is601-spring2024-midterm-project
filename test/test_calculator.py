@@ -1,6 +1,5 @@
 '''test for the Calculator class'''
 from calculator import Calculator
-#from calculator.calc_history import CalcHistory
 
 def test_add():
     '''test for calculator add method'''

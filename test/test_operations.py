@@ -1,6 +1,7 @@
 '''Testing General Operations'''
 import pytest
 from calculator.operations import add, subtract, multiply, divide
+#from calculator import Calculator
 
 def test_add():
     '''test for addition'''
