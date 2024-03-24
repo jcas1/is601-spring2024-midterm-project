@@ -1,5 +1,6 @@
 [run]
-omit =
-    *main.py
+source=.
+omit=
     tests/conftest.py
+    main.py
     tests/__init__.py
