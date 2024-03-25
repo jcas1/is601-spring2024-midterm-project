@@ -38,6 +38,9 @@ class App:
             except ValueError:
                 print("Invalid input format. Please enter [operation x y] \n x & y must be numbers.")
                 continue
-
-            result = self.command_handler.execute_command(command_name, x, y)
-            print("Result:", result)
+            try:
+                result = self.command_handler.execute_command(command_name, x, y)
+                print("Result:", result)
+            except ValueError:
+                print("Cannot Divide By Zero")
+                continue
