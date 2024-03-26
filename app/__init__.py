@@ -33,7 +33,7 @@ class App:
                     if isinstance(attribute, type) and issubclass(attribute, Command) and attribute is not Command:
                         # Instantiate and register command
                         self.command_handler.register_command(plugin_name, attribute())
-                        #self.loaded_plugins[plugin_name] = attribute  # Store plugin in loaded_plugins dictionary
+                        self.loaded_plugins[plugin_name] = attribute  # Store plugin in loaded_plugins dictionary
                         logging.info("Plugin Loaded: %s", plugin_name)
 
     def start(self):
