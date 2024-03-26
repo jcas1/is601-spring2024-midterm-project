@@ -5,4 +5,5 @@ disable= unused-argument,
          line-too-long,
          redefined-outer-name,
          too-few-public-methods,
-         pointless-statement
+         pointless-statement,
+         arguments-differ
