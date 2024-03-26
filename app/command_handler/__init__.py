@@ -7,7 +7,7 @@ class Command(ABC):
     Base class for commands includes a execute method with two parameters 
     '''
     @abstractmethod
-    def execute(self, x, y):
+    def execute(self, *args):
         '''generic execute'''
         pass
 
@@ -22,7 +22,7 @@ class CommandHandler:
         '''Used to register a command with a given name'''
         self.commands[name] = command
 
-    def execute_command(self, command, x, y):
+    def execute_command(self, command, *args):
         '''
         Utilizing Easier to Ask for Forgiveness than Permission (EAFP)
 
@@ -30,7 +30,11 @@ class CommandHandler:
         However, in case that the user does, nothing would occur
         '''
         try:
-            return self.commands[command].execute(x, y)
+            return self.commands[command].execute(*args)
         except KeyError:
             print("Command does not exist")
             return None
+
+    def get_registered_commands(self):
+        '''Returns a list of registered command names'''
+        return list(self.commands.keys())
