@@ -4,10 +4,11 @@ import pkgutil
 import importlib
 import logging
 import os
+from calculator.csv_history import CsvHistory
 from app.command_handler import CommandHandler, Command
 
 class App:
-    '''App Class responsible for managing plygins and handling user interaction'''
+    '''App Class responsible for managing plugins and handling user interaction'''
     def __init__(self):
         '''Initializes the command handler, and where the plugins should be located'''
         self.command_handler = CommandHandler()
@@ -19,6 +20,13 @@ class App:
         logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s',
                             handlers=[logging.FileHandler(os.path.join(self.logging_dir, 'app.log')),
                                       logging.StreamHandler()])
+        #Makes a CSV folder if one does not exist
+        if not os.path.exists('csv'):
+            os.makedirs('csv')
+
+        # Initialize CSV file for history
+        self.csv_history_path = 'csv/command_history.csv'
+        self.csv_history_manager = CsvHistory(self.csv_history_path)
 
     def load_plugins(self):
         '''Loads plugins from plugins folder'''
@@ -33,7 +41,7 @@ class App:
                     if isinstance(attribute, type) and issubclass(attribute, Command) and attribute is not Command:
                         # Instantiate and register command
                         self.command_handler.register_command(plugin_name, attribute())
-                        self.loaded_plugins[plugin_name] = attribute  # Store plugin in loaded_plugins dictionary
+                        #self.loaded_plugins[plugin_name] = attribute  # Store plugin in loaded_plugins dictionary
                         logging.info("Plugin Loaded: %s", plugin_name)
 
     def start(self):
@@ -65,6 +73,7 @@ class App:
                 result = self.command_handler.execute_command(command_name, *args)
                 logging.info("Command '%s' executed with parameters: %s. Result: %s", command_name, args, result)
                 print("Result:", result)
+                self.csv_history_manager.update_history(command_name, *args, result)
             except ValueError:
                 logging.warning("Cannot divide by zero")
                 print("Cannot Divide By Zero")
