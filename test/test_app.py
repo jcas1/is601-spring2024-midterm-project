@@ -50,7 +50,7 @@ def test_calculations(capfd, app, user_input, expected_output):
         with pytest.raises(SystemExit):
             app.start()
     captured = capfd.readouterr()
-    print("Captured output:", captured.out)  # Print captured output for debugging
+    print("Captured output:", captured.out)  # Print output
 
     # Check if expected output is present in captured output
     if expected_output:
