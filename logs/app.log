@@ -807,3 +807,87 @@
 2024-03-29 00:36:47,188 - INFO - Command 'save_history' executed with parameters: []. Result: None
 2024-03-29 00:36:47,189 - INFO - CSV only tracking Operations & Operands
 2024-03-29 00:37:08,723 - INFO - Exiting application
+2024-03-29 01:41:55,943 - INFO - Logging configured with level INFO
+2024-03-29 01:41:55,944 - INFO - Loading plugins from directory: app.plugins
+2024-03-29 01:41:55,945 - INFO - Plugin Loaded: add
+2024-03-29 01:41:55,945 - INFO - Plugin Loaded: clear_history
+2024-03-29 01:41:55,945 - INFO - Plugin Loaded: divide
+2024-03-29 01:41:55,945 - INFO - Plugin Loaded: get_latest
+2024-03-29 01:41:55,945 - INFO - Plugin Loaded: greet
+2024-03-29 01:41:55,945 - INFO - Plugin Loaded: load_history
+2024-03-29 01:41:55,946 - INFO - Plugin Loaded: multiply
+2024-03-29 01:41:55,946 - INFO - Plugin Loaded: save_history
+2024-03-29 01:41:55,946 - INFO - Plugin Loaded: subtract
+2024-03-29 01:41:55,946 - INFO - Application started
+2024-03-29 01:42:17,336 - INFO - Command 'exit' executed with parameters: []. Result: None
+2024-03-29 01:42:17,337 - INFO - CSV only tracking Operations & Operands
+2024-03-29 01:42:20,037 - INFO - Exiting application
+2024-03-29 01:42:33,181 - INFO - Logging configured with level INFO
+2024-03-29 01:42:33,182 - INFO - Loading plugins from directory: app.plugins
+2024-03-29 01:42:33,182 - INFO - Plugin Loaded: add
+2024-03-29 01:42:33,182 - INFO - Plugin Loaded: clear_history
+2024-03-29 01:42:33,182 - INFO - Plugin Loaded: divide
+2024-03-29 01:42:33,182 - INFO - Plugin Loaded: get_latest
+2024-03-29 01:42:33,183 - INFO - Plugin Loaded: greet
+2024-03-29 01:42:33,183 - INFO - Plugin Loaded: load_history
+2024-03-29 01:42:33,183 - INFO - Plugin Loaded: multiply
+2024-03-29 01:42:33,183 - INFO - Plugin Loaded: save_history
+2024-03-29 01:42:33,183 - INFO - Plugin Loaded: subtract
+2024-03-29 01:42:33,183 - INFO - Application started
+2024-03-29 01:42:34,677 - INFO - Command 'menu' executed with parameters: []. Result: None
+2024-03-29 01:42:34,677 - INFO - CSV only tracking Operations & Operands
+2024-03-29 01:42:41,353 - INFO - Command 'menu' executed with parameters: []. Result: None
+2024-03-29 01:42:41,353 - INFO - CSV only tracking Operations & Operands
+2024-03-29 01:43:44,853 - INFO - Command 'quit'' executed with parameters: []. Result: None
+2024-03-29 01:43:44,853 - INFO - CSV only tracking Operations & Operands
+2024-03-29 01:43:47,456 - INFO - Exiting application
+2024-03-29 01:43:48,691 - INFO - Logging configured with level INFO
+2024-03-29 01:43:48,692 - INFO - Loading plugins from directory: app.plugins
+2024-03-29 01:43:48,693 - INFO - Plugin Loaded: add
+2024-03-29 01:43:48,693 - INFO - Plugin Loaded: clear_history
+2024-03-29 01:43:48,693 - INFO - Plugin Loaded: divide
+2024-03-29 01:43:48,693 - INFO - Plugin Loaded: get_latest
+2024-03-29 01:43:48,693 - INFO - Plugin Loaded: greet
+2024-03-29 01:43:48,694 - INFO - Plugin Loaded: load_history
+2024-03-29 01:43:48,694 - INFO - Plugin Loaded: multiply
+2024-03-29 01:43:48,694 - INFO - Plugin Loaded: save_history
+2024-03-29 01:43:48,695 - INFO - Plugin Loaded: subtract
+2024-03-29 01:43:48,695 - INFO - Application started
+2024-03-29 01:43:53,109 - INFO - Command 'add' executed with parameters: [2.0, 2.0]. Result: 4.0
+2024-03-29 01:44:44,072 - INFO - Exiting application
+2024-03-29 01:44:56,382 - INFO - Logging configured with level INFO
+2024-03-29 01:44:56,383 - INFO - Loading plugins from directory: app.plugins
+2024-03-29 01:44:56,383 - INFO - Plugin Loaded: add
+2024-03-29 01:44:56,384 - INFO - Plugin Loaded: clear_history
+2024-03-29 01:44:56,384 - INFO - Plugin Loaded: divide
+2024-03-29 01:44:56,384 - INFO - Plugin Loaded: get_latest
+2024-03-29 01:44:56,384 - INFO - Plugin Loaded: greet
+2024-03-29 01:44:56,384 - INFO - Plugin Loaded: load_history
+2024-03-29 01:44:56,385 - INFO - Plugin Loaded: menu
+2024-03-29 01:44:56,385 - INFO - Plugin Loaded: multiply
+2024-03-29 01:44:56,385 - INFO - Plugin Loaded: save_history
+2024-03-29 01:44:56,385 - INFO - Plugin Loaded: subtract
+2024-03-29 01:44:56,385 - INFO - Application started
+2024-03-29 01:44:58,878 - INFO - Command 'add' executed with parameters: [2.0, 2.0]. Result: 4.0
+2024-03-29 01:45:03,917 - INFO - Command 'menu' executed with parameters: []. Result: None
+2024-03-29 01:45:03,917 - INFO - CSV only tracking Operations & Operands
+2024-03-29 01:58:28,274 - INFO - Exiting application
+2024-03-29 02:02:29,103 - INFO - Logging configured with level INFO
+2024-03-29 02:02:29,104 - INFO - Loading plugins from directory: app.plugins
+2024-03-29 02:02:29,104 - INFO - Plugin Loaded: add
+2024-03-29 02:02:29,105 - INFO - Plugin Loaded: clear_history
+2024-03-29 02:02:29,105 - INFO - Plugin Loaded: divide
+2024-03-29 02:02:29,105 - INFO - Plugin Loaded: get_latest
+2024-03-29 02:02:29,105 - INFO - Plugin Loaded: greet
+2024-03-29 02:02:29,105 - INFO - Plugin Loaded: load_history
+2024-03-29 02:02:29,106 - INFO - Plugin Loaded: menu
+2024-03-29 02:02:29,106 - INFO - Plugin Loaded: multiply
+2024-03-29 02:02:29,106 - INFO - Plugin Loaded: save_history
+2024-03-29 02:02:29,106 - INFO - Plugin Loaded: subtract
+2024-03-29 02:02:29,106 - INFO - Application started
+2024-03-29 02:02:39,836 - INFO - Command 'add' executed with parameters: [2.0, 2.0]. Result: 4.0
+2024-03-29 02:02:45,123 - INFO - Command 'greet' executed with parameters: []. Result: Hello
+2024-03-29 02:02:45,123 - INFO - CSV only tracking Operations & Operands
+2024-03-29 02:02:47,826 - INFO - Command 'menu' executed with parameters: []. Result: None
+2024-03-29 02:02:47,827 - INFO - CSV only tracking Operations & Operands
+2024-03-29 02:05:46,829 - INFO - Exiting application
