@@ -1,3 +1,4 @@
+'''Menu Command that displays all avaiable plugins'''
 import pkgutil
 from app.command_handler import Command
 
