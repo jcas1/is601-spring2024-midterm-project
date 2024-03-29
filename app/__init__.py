@@ -71,10 +71,17 @@ class App:
                 result = self.command_handler.execute_command(command_name, *args)
                 logging.info("Command '%s' executed with parameters: %s. Result: %s", command_name, args, result)
                 print("Result:", result)
-                self.csv_history_manager.update_history(command_name, *args, result)
             except ValueError:
                 logging.warning("Cannot divide by zero")
                 print("Cannot Divide By Zero")
             except TypeError:
+                logging.error("Invalid input format: %s", command_name)
+                print("Invalid input format")
+
+            try:
+                self.csv_history_manager.update_history(command_name, *args, result)
+            except TypeError:
                 logging.info("CSV only tracking Operations & Operands")
+                continue
+            except UnboundLocalError:
                 continue

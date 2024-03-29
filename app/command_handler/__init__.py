@@ -1,4 +1,5 @@
 #pylint: disable=unnecessary-pass
+#pylint: disable=no-else-return
 '''CommandHandler'''
 from abc import ABC, abstractmethod
 
@@ -29,15 +30,7 @@ class CommandHandler:
         Check if the specified command exists before attempting to execute it.
         '''
         if command in self.commands:
-            try:
-                return self.commands[command].execute(*args)
-            except Exception as e:
-                print(f"An error occurred while executing command '{command}': {e}")
-                return None
+            return self.commands[command].execute(*args)
         else:
             print("Command does not exist")
             return None
-
-    def get_registered_commands(self):
-        '''Returns a list of registered command names'''
-        return list(self.commands.keys())
