@@ -31,7 +31,7 @@ class CalcHistory:
         try:
             history_df = pd.read_csv(savefile_path)
             #Overwrites Current command_history.csv
-            history_df.to_csv(cls.csv_path, index=False)  
+            history_df.to_csv(cls.csv_path, index=False)
             return history_df
         except FileNotFoundError:
             return pd.DataFrame(columns=['Operation', 'Operand1', 'Operand2', 'Result'])
