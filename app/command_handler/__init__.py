@@ -36,7 +36,6 @@ class CommandHandler:
                 return None
         else:
             print("Command does not exist")
-            logging.info("Command does not exist")
             return None
 
     def get_registered_commands(self):
