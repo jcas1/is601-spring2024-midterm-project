@@ -31,7 +31,6 @@ class App:
     def load_plugins(self):
         '''Loads plugins from plugins folder'''
         logging.info("Loading plugins from directory: %s", self.plugins_dir)
-        #self.loaded_plugins = {}  # Dictionary to store loaded plugins
         for _, plugin_name, is_pkg in pkgutil.iter_modules([self.plugins_dir.replace('.', '/')]):
             if is_pkg:
                 # Dynamically import the module based on its path
@@ -41,7 +40,6 @@ class App:
                     if isinstance(attribute, type) and issubclass(attribute, Command) and attribute is not Command:
                         # Instantiate and register command
                         self.command_handler.register_command(plugin_name, attribute())
-                        #self.loaded_plugins[plugin_name] = attribute  # Store plugin in loaded_plugins dictionary
                         logging.info("Plugin Loaded: %s", plugin_name)
 
     def start(self):
@@ -78,5 +76,5 @@ class App:
                 logging.warning("Cannot divide by zero")
                 print("Cannot Divide By Zero")
             except TypeError:
-                logging.error("Invalid input format: %s", command_name)
-                print("Invalid input format")
+                logging.info("CSV only tracking Operations & Operands")
+                continue
