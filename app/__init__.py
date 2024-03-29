@@ -4,22 +4,24 @@ import pkgutil
 import importlib
 import logging
 import os
+from dotenv import load_dotenv
 from calculator.csv_history import CsvHistory
 from app.command_handler import CommandHandler, Command
+
 
 class App:
     '''App Class responsible for managing plugins and handling user interaction'''
     def __init__(self):
         '''Initializes the command handler, and where the plugins should be located'''
+        load_dotenv()
         self.command_handler = CommandHandler()
         self.plugins_dir = os.getenv('PLUGINS_DIR', 'app.plugins')
         # Create a logging directory if it doesn't exist
         self.logging_dir = 'logs'
         os.makedirs(self.logging_dir, exist_ok=True)
-        # Configure logging to write to file
-        logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s',
-                            handlers=[logging.FileHandler(os.path.join(self.logging_dir, 'app.log')),
-                                      logging.StreamHandler()])
+
+        self.configure_logging()
+
         #Makes a CSV folder if one does not exist
         if not os.path.exists('csv'):
             os.makedirs('csv')
@@ -27,6 +29,22 @@ class App:
         # Initialize CSV file for history
         self.csv_history_path = 'csv/command_history.csv'
         self.csv_history_manager = CsvHistory(self.csv_history_path)
+
+    def configure_logging(self):
+        '''Initializing the Logs'''
+        log_level = os.getenv('LOG_LEVEL', 'INFO').upper()
+        log_format = '%(asctime)s - %(levelname)s - %(message)s'
+        log_file = os.path.join(self.logging_dir, 'app.log')
+
+        logging.basicConfig(level=log_level, format=log_format, filename=log_file)
+
+        if os.getenv('LOG_CONSOLE', 'False').lower() == 'true':
+            console_handler = logging.StreamHandler(sys.stdout)
+            console_handler.setLevel(log_level)
+            console_handler.setFormatter(logging.Formatter(log_format))
+            logging.getLogger().addHandler(console_handler)
+
+        logging.info("Logging configured with level %s", log_level)
 
     def load_plugins(self):
         '''Loads plugins from plugins folder'''
