@@ -1,0 +1,9 @@
+[MESSAGES CONTROL]
+# Only show these errors
+# Disable the following checks (example list):
+disable= unused-argument,
+         line-too-long,
+         redefined-outer-name,
+         too-few-public-methods,
+         pointless-statement,
+         arguments-differ
