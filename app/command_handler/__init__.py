@@ -24,15 +24,19 @@ class CommandHandler:
 
     def execute_command(self, command, *args):
         '''
-        Utilizing Easier to Ask for Forgiveness than Permission (EAFP)
+        Utilizing Look Before You Leap (LBYL) principle
 
-        Since the commands for the calculator are straight forward, the user will likely not make a mistake
-        However, in case that the user does, nothing would occur
+        Check if the specified command exists before attempting to execute it.
         '''
-        try:
-            return self.commands[command].execute(*args)
-        except KeyError:
+        if command in self.commands:
+            try:
+                return self.commands[command].execute(*args)
+            except Exception as e:
+                print(f"An error occurred while executing command '{command}': {e}")
+                return None
+        else:
             print("Command does not exist")
+            logging.info("Command does not exist")
             return None
 
     def get_registered_commands(self):
