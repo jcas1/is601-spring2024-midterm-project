@@ -12,7 +12,6 @@ class Calculator:
         will perform the calculation and save it as well
         '''
         calc = Calculation(x, y, operation)
-        CalcHistory.add_calc(calc)
         return calc.perform()
 
     @staticmethod
