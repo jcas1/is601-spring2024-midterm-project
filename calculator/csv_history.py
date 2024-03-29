@@ -20,9 +20,8 @@ class CsvHistory:
         '''Update CSV file for command history'''
         new_entry = pd.DataFrame({'Operation': [operation], 'Operand1': [operand1], 'Operand2': [operand2], 'Result': [result]})
         # Check if new_entry is not empty or all-NA
-        new_entry = new_entry.dropna()
-        if not new_entry.empty:
-            self.csv_history = pd.concat([self.csv_history, new_entry], ignore_index=True, sort=False)
+        if not new_entry.dropna().empty:
+            self.csv_history = pd.concat([self.csv_history, new_entry.dropna()], ignore_index=True, sort=False)
             self.csv_history.to_csv(self.csv_history_path, index=False)
         else:
             print("Skipping empty or all-NA entry:", new_entry)
