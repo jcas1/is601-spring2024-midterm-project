@@ -27,6 +27,7 @@ def test_init_loads_existing_csv(csv_history_path):
     assert len(history.csv_history) == 1
     assert history.csv_history.equals(pd.DataFrame(sample_data))
 
+@pytest.mark.filterwarnings("ignore::FutureWarning")
 def test_update_history(csv_history_path):
     '''Test updating the CSV history'''
     # Initialize CsvHistory
