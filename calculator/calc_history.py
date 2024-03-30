@@ -1,4 +1,5 @@
 '''Class that manages the calculator history and function unrelated to arithmetic operation'''
+import warnings
 import pandas as pd
 
 class CalcHistory:
@@ -49,7 +50,10 @@ class CalcHistory:
         '''Update history'''
         new_entry = pd.DataFrame({'Operation': [operation], 'Operand1': [operand1], 'Operand2': [operand2], 'Result': [result]})
         if not new_entry.dropna().empty:
-            cls.history = pd.concat([cls.history, new_entry.dropna()], ignore_index=True, sort=False)
+            # Ignore FutureWarning
+            with warnings.catch_warnings():
+                warnings.filterwarnings("ignore", category=FutureWarning)
+                cls.history = pd.concat([cls.history, new_entry.dropna()], ignore_index=True, sort=False)
             cls.history.to_csv(cls.csv_path, index=False)
         else:
             print("Skipping empty or all-NA entry:", new_entry)
