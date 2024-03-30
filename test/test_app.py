@@ -40,6 +40,7 @@ def test_start_quit_command(app):
     ("fake_command 4 3", "Command does not exist")
 ])
 
+@pytest.mark.filterwarnings("ignore::FutureWarning")
 def test_calculations(capfd, app, user_input, expected_output):
     '''Test for various calculations'''
     # Mock user input
