@@ -46,30 +46,40 @@ So by checking to see if a command is in the command dictionary, if it is, then 
 [Reference](https://realpython.com/python-lbyl-vs-eafp/)
 
 
-Example Configurations:
+### Example Configurations:
+
 To start type the following into the command line:
+
     '''
     python main.py
     '''
+
 To find what commands are available use just type into the command line:
+
     '''
     menu
     '''
+
 The following are the valid operations currently available:
+
     '''
     add
     subtract
     multiply
     divide
     '''
+
 to perform each operation, simply insert two operands (numbers) after the operation
+
     '''
     add 2 2
     subtract 7 3
     multiple 2.5 2
     divide 10 2
     '''
+
 The following other commands only require the command name into the command line:
+
     '''
     greet
     clear_history
@@ -77,6 +87,7 @@ The following other commands only require the command name into the command line
     load_history
     save_history
     '''
+
 The last four commands are used to manipulate the .csv file.
 
 ### Install
@@ -84,7 +95,6 @@ Clone repo
     '''
     pip install -requirement.txt
     '''
-
 ### Testing
     '''
     pytest
