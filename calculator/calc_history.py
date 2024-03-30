@@ -30,14 +30,26 @@ class CalcHistory:
         savefile_path = 'csv/savefile.csv'
         try:
             history_df = pd.read_csv(savefile_path)
-            #Overwrites Current command_history.csv
-            history_df.to_csv(cls.csv_path, index=False)
-            return history_df
+            cls.history = history_df
+            cls.history.to_csv(cls.csv_path, index=False)
+            return cls.history
         except FileNotFoundError:
-            return pd.DataFrame(columns=['Operation', 'Operand1', 'Operand2', 'Result'])
+            cls.history = pd.DataFrame(columns=['Operation', 'Operand1', 'Operand2', 'Result'])
+            cls.history.to_csv(cls.csv_path, index=False)
+            return cls.history
 
     @classmethod
     def save_history(cls):
         '''Save history to a new CSV file named savefile.csv'''
         savefile_path = 'csv/savefile.csv'
         cls.history.to_csv(savefile_path, index=False)
+
+    @classmethod
+    def update_history(cls, operation, operand1, operand2, result):
+        '''Update history'''
+        new_entry = pd.DataFrame({'Operation': [operation], 'Operand1': [operand1], 'Operand2': [operand2], 'Result': [result]})
+        if not new_entry.dropna().empty:
+            cls.history = pd.concat([cls.history, new_entry.dropna()], ignore_index=True, sort=False)
+            cls.history.to_csv(cls.csv_path, index=False)
+        else:
+            print("Skipping empty or all-NA entry:", new_entry)

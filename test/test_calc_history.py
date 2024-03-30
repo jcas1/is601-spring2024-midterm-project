@@ -55,3 +55,22 @@ def test_save_history():
     assert os.path.exists('csv/savefile.csv')
     saved_df = pd.read_csv('csv/savefile.csv')
     assert saved_df.equals(history_df)
+
+def test_update_history():
+    '''Adds new data to the history and checks if it's updated correctly'''
+    initial_df = pd.DataFrame({'Operation': ['add'], 'Operand1': [2.0], 'Operand2': [2.0], 'Result': [4.0]})
+    CalcHistory.history = initial_df
+
+    # Execute update with new data
+    operation = 'subtract'
+    operand1 = 5.0
+    operand2 = 3.0
+    result = 2.0
+    CalcHistory.update_history(operation, operand1, operand2, result)
+
+    # Check if the history has been updated correctly
+    latest_entry = CalcHistory.history.iloc[-1]
+    assert latest_entry['Operation'] == operation
+    assert latest_entry['Operand1'] == operand1
+    assert latest_entry['Operand2'] == operand2
+    assert latest_entry['Result'] == result

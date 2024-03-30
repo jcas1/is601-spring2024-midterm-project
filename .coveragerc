@@ -1,6 +1,6 @@
 [run]
 source=.
 omit=
-    tests/conftest.py
+    test/conftest.py
     main.py
-    tests/__init__.py
+    test/__init__.py

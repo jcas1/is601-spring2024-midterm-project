@@ -5,7 +5,7 @@ import importlib
 import logging
 import os
 from dotenv import load_dotenv
-from calculator.csv_history import CsvHistory
+from calculator.calc_history import CalcHistory
 from app.command_handler import CommandHandler, Command
 
 
@@ -27,8 +27,8 @@ class App:
             os.makedirs('csv')
 
         # Initialize CSV file for history
-        self.csv_history_path = 'csv/command_history.csv'
-        self.csv_history_manager = CsvHistory(self.csv_history_path)
+        self.csv_history_manager = CalcHistory()
+        self.csv_history_manager.load_history()
 
     def configure_logging(self):
         '''Initializing the Logs'''
